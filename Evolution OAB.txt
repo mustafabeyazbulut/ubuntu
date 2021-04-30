@@ -1,0 +1,3 @@
+https://mail.ozdilek.com.tr/EWS/Exchange.asmx
+
+https://mail.ozdilek.com.tr/OAB/12fa8d85-ff5e-4068-9067-ff512d8bc9f6/oab.xml

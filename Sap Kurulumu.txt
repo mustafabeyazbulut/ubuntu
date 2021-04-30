@@ -1,0 +1,7 @@
+java -jar "Dosya Yolu"
+
+Kurulum bittikten sonra sap açýlýr ve Sap Logon ini içine taþýnýr
+
+
+baðlantý ayarlarý
+conn=/H/172.21.10.148/S/3201

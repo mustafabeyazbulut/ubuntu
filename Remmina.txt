@@ -1,0 +1,1 @@
+sudo apt install remmina remmina-dbg

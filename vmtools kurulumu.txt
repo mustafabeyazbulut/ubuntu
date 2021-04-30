@@ -1,0 +1,22 @@
+sudo apt-get update
+sudo apt-get install open-vm-tools
+sudo apt-get install open-vm-tools-desktop
+
+
+
+
+ya da
+
+
+sudo mkdir /mnt/cdrom
+sudo mount /dev/cdrom /mnt/cdrom
+ls /mnt/cdrom
+tar xzvf /mnt/cdrom/VMwareTools-*.tar.gz -C /tmp
+cd /tmp/vmware-tools-distrib/
+sudo ./vmware-install.pl -d
+sudo reboot
+
+
+
+isolation.tools.copy.disable	false
+isolation.tools.paste.disable	false

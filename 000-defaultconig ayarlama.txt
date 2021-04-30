@@ -1,0 +1,23 @@
+gedit /etc/apache2/sites-available/000-default.conf
+
+<VirtualHost *:80>
+    ServerAdmin ozduser@localhost
+    DocumentRoot /var/www/nextcloud
+    <FilesMatch \.php$>
+      SetHandler application/x-httpd-php
+    </FilesMatch>
+    <Directory />
+            Options FollowSymLinks
+            AllowOverride None
+    </Directory>
+    <Directory /var/www/nextcloud/>
+            DirectoryIndex index.php
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride All
+            Require all granted
+    </Directory>
+    ErrorLog  ${APACHE_LOG_DIR}/error.log
+    LogLevel warn
+    CustomLog  ${APACHE_LOG_DIR}/access.log combined
+    ServerSignature On
+</VirtualHost>

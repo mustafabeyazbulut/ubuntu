@@ -1,0 +1,13 @@
+Terminal penceresine:
+sudo apt-get update
+sudo apt-get install ia32-libs
+diyerek 32 bitlik paketleri yüklüyoruz.
+Daha sonra wine ile ilgili olan kýsýmda ise:
+sudo add-apt-repository ppa:ubuntu-wine/ppa
+sudo apt-get update
+sudo apt-get install wine1.5
+yazarak wine 1.5 i yüklüyoruz.
+Ardýndan :
+WINEPREFIX=~/.wine WINEARCH=win32 wine winecfg
+Bu komutla 32 bitlik wine oluþturuyoruz.
+rm -rf .wine ; WINEARCH=win32 wineboot ; wineserver -w

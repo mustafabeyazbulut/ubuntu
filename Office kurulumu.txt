@@ -1,0 +1,5 @@
+32 bit sürüm kurulabilir.
+
+öncelikle playonlinux açýlýr ve kur seçilir
+ orada yazan eklenti paket programlardan eklenir
+sornasýnda kurulum gerçekleþir

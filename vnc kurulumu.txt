@@ -1,0 +1,21 @@
+1-sudo apt-get -y remove vino
+2-sudo apt-get -y install x11vnc
+3-sudo mkdir /etc/x11vnc
+4-sudo x11vnc --storepasswd /etc/x11vnc/vncpwd
+5-sudo nano /lib/systemd/system/x11vnc.service
+
+[Unit]
+Description=Start x11vnc at startup.
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/x11vnc -auth guess -forever -noxdamage -repeat -rfbauth /etc/x11vnc/vncpwd -rfbport 5900 -shared
+
+[Install]
+WantedBy=multi-user.target
+
+
+6-sudo systemctl daemon-reload
+7-sudo systemctl enable x11vnc.service
+8-sudo systemctl start x11vnc.service

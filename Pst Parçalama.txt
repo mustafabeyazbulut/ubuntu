@@ -1,0 +1,5 @@
+sudo apt-get install readpst
+
+mkdir ~/Evolution
+
+readpst -D -j 2 -o ~/Evolution -q -r ~/outlook.pst

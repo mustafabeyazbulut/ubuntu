@@ -1,0 +1,3 @@
+eklentilerden ExQuilla for Microsoft Exchange eklenir
+
+https://ozdexch.ozdmn.com/ews/exchange.asmx

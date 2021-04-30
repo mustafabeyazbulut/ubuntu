@@ -1,0 +1,15 @@
+sudo nano /usr/share/applications/java.desktop
+
+[Desktop Entry]
+Name=Mustafa And Harun Software
+Comment=Mustafa And Harun Software
+GenericName=Mustafa And Harun Software
+Keywords=java
+Exec=java -jar %f
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+MimeType=application/x-java-archive
+StartupNotify=true
+
+Java Application

@@ -1,0 +1,41 @@
+1-sudo apt-get update
+2-sudo apt-get upgrade
+3-sudo apt-get -y install x11vnc
+
+	1-sudo mkdir /etc/x11vnc
+	2-sudo x11vnc --storepasswd /etc/x11vnc/vncpwd
+	3-sudo nano /lib/systemd/system/x11vnc.service
+
+[Unit]
+Description=Start x11vnc at startup.
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/x11vnc -auth guess -forever -noxdamage -repeat -rfbauth /etc/x11vnc/vncpwd -rfbport 5900 -shared
+
+[Install]
+WantedBy=multi-user.target
+
+	4-sudo systemctl daemon-reload
+	5-sudo systemctl enable x11vnc.service
+	6-sudo systemctl start x11vnc.service
+
+4-sudo apt install openjfx default-jre default-jdk synaptic evolution evolution-ews gigolo openssh-server gdebi remmina xrdp
+5-sudo apt-get remove avahi-daemon
+6-sudo nano /usr/share/applications/java.desktop
+
+[Desktop Entry]
+Name=MustafaHarun Software
+Comment=MustafaHarun Software
+GenericName=MustafaHarun Software
+Keywords=java
+Exec=java -jar %f
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+MimeType=application/x-java-archive
+StartupNotify=true
+
+7-Sap kurulumu
+8- Dil paketleri kurulur ve ingilizce dil paketi kaldýrýlýr.

@@ -1,0 +1,73 @@
+sudo apt-get install libapache2-mod-php7.2 php7.2-cli php7.2-mysql php7.2-mysqli php7.2-gd php7.2-json php-pear snmp fping mysql-server mysql-client python-mysqldb rrdtool subversion whois mtr-tiny ipmitool graphviz imagemagick apache2 libvirt-bin
+
+
+
+
+mkdir -p /opt/observium && cd /opt
+
+wget http://www.observium.org/observium-community-latest.tar.gz
+tar zxvf observium-community-latest.tar.gz
+
+
+
+mysql -u root -p
+
+
+CREATE DATABASE observium DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+GRANT ALL PRIVILEGES ON observium.* TO obuser@localhost identified by 'Passw0rd';
+flush privileges;
+exit
+
+Database Name		: observium
+Database Username	: obuser
+Database Password	: Passw0rd
+
+
+
+cd observium
+
+cp config.php.default config.php
+
+gedit config.php
+
+./discovery.php -u
+
+mkdir logs
+mkdir rrd
+chown www-data:www-data rrd
+gedit /etc/apache2/sites-available/000-default.conf
+
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    DocumentRoot /opt/observium/html
+    <FilesMatch \.php$>
+      SetHandler application/x-httpd-php
+    </FilesMatch>
+    <Directory />
+            Options FollowSymLinks
+            AllowOverride None
+    </Directory>
+    <Directory /opt/observium/html/>
+            DirectoryIndex index.php
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride All
+            Require all granted
+    </Directory>
+    ErrorLog  ${APACHE_LOG_DIR}/error.log
+    LogLevel warn
+    CustomLog  ${APACHE_LOG_DIR}/access.log combined
+    ServerSignature On
+</VirtualHost>
+
+
+apache2ctl configtest
+
+sudo a2dismod mpm_event
+sudo a2enmod mpm_prefork
+sudo a2enmod php7.2
+
+sudo a2enmod rewrite
+systemctl restart apache2
+
+./adduser.php admin admin 10
+

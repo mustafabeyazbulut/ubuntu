@@ -1,0 +1,14 @@
+erminal/Konsol açarak aþaðýdaki komutu uygulayýnýz;
+
+sudo nano /etc/apt/sources.list
+
+Bir editör açýlacaktýr editöre aþaðýdaki satýralarý yapýþtýrýnýz. (Resmi Pardus Paket Deposu Adresleri)
+
+ deb http://depo.pardus.org.tr/pardus onyedi main non-free contrib
+ deb-src http://depo.pardus.org.tr/pardus onyedi main non-free contrib
+ deb http://depo.pardus.org.tr/guvenlik onyedi/updates main non-free contrib
+ deb-src http://depo.pardus.org.tr/guvenlik onyedi/updates main non-free contrib
+CTRL-O ardýndan Enter ile dosyayý kaydedip, CTRL-X ile editörü kapatýnýz.
+
+sudo apt-get update
+Sonrasýnda kullanmaya baþlayabilirsiniz.

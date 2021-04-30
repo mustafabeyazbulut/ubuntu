@@ -1,0 +1,3 @@
+sudo chmod +x dosya_adi.run
+sudo sh ./dosya_adi.run
+sudo ./dosya_adi.run
