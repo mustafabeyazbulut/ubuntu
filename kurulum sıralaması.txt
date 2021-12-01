@@ -28,7 +28,7 @@ WantedBy=multi-user.target
 [Desktop Entry]
 Name=MustafaHarun Software
 Comment=MustafaHarun Software
-GenericName=MustafaHarun Software
+GenericName=Mustafa Software
 Keywords=java
 Exec=java -jar %f
 Terminal=false
